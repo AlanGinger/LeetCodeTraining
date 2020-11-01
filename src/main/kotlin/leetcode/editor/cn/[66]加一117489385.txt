@@ -1,0 +1,17 @@
+class Solution {
+    fun plusOne(digits: IntArray): IntArray {
+        for (i in digits.size - 1 downTo 0) {
+            digits[i]++
+            digits[i] %= 10
+            if (digits[i] != 0) {
+                return digits
+            }
+        }
+        val digits = IntArray(digits.size + 1)
+        digits[0] = 1
+        return digits
+    }
+}
+
+//runtime:208 ms
+//memory:32.9 MB
