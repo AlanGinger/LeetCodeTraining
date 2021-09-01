@@ -43,8 +43,6 @@
 
 package leetcode.editor.cn;
 
-import java.util.LinkedList;
-
 public class ReverseLinkedList {
     public static void main(String[] args) {
         Solution solution = new ReverseLinkedList().new Solution();
@@ -71,15 +69,15 @@ public class ReverseLinkedList {
      */
     class Solution {
         public ListNode reverseList(ListNode head) {
-            ListNode prev = null;
-            ListNode curr = head;
-            while (curr != null) {
-                ListNode next = curr.next;
-                curr.next = prev;
-                prev = curr;
-                curr = next;
+            ListNode curr = null;
+            ListNode prev = head;
+            while (prev != null) {
+                ListNode next = prev.next;
+                prev.next = curr;
+                curr = prev;
+                prev = next;
             }
-            return prev;
+            return curr;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
