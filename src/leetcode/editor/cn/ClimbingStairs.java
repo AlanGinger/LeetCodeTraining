@@ -34,16 +34,15 @@ public class ClimbingStairs {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int climbStairs(int n) {
+            if (n < 2) return n;
             int f1 = 1;
             int f2 = 2;
-            int f3 = 0;
-            if (n <= 2) return n;
             for (int i = 3; i <= n; i++) {
-                f3 = f1 + f2;
+                int temp = f1;
                 f1 = f2;
-                f2 = f3;
+                f2 = temp + f2;
             }
-            return f3;
+            return f2;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
